@@ -41,7 +41,5 @@ public class SandwichShop
     // Displaying the cost of the sandwich
     System.out.println("Cost of the sandwich: $" + discountedPrice);
 
-    // Closing the scanner
-    scanner.close();
 }
 }
