@@ -10,7 +10,8 @@ public class EventApplication
 
     public static void main(String[] args)
     {
-
+        Person eventGoer = register();
+        System.out.print(eventGoer. getFirstName());
     }
 
     public static Person register()
@@ -20,6 +21,26 @@ public class EventApplication
 
     public static void greetGuest(Person guest)
     {
+        //declare variables
+        String fullName, firstName, lastName;
+        int age;
 
+        System.out.print("Please enter your full name: ");
+        fullName = userInput.nextLine();
+        System.out.print("Please enter your age: ");
+        age = userInput.nextInt();
+        userInput.nextLine(); // clears the memory stream
+
+        // get first and last names
+        String[] names = fullName.split(" ");
+        firstName = names[0];
+        lastName = names[1];
+
+
+
+        // create a person
+        Person person = new Person(firstName, lastName, age);
+
+        return null;
     }
 }
