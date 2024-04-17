@@ -18,6 +18,14 @@ public class CellPhone
         this.owner = "";
     }
 
+    // Getter and setter methods for model
+    public int getSerialNumber() {
+        return serialNumber;
+    }
+
+    public void setSerialNumber(int serialNumber) {
+        this.serialNumber = serialNumber;
+    }
 
     // Getter and setter methods for model
     public String getModel() {
