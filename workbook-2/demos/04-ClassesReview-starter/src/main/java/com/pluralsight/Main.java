@@ -4,6 +4,9 @@ public class Main
 {
     public static void main(String[] args)
     {
-        System.out.println("Hello world!");
+        house house1 = new house("Gray", "Tan");
+
+        System.out.println("Woohoo");
+        System.out.println("I have a " + house1.getOutsideColor() + " house");
     }
 }
