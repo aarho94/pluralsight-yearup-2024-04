@@ -32,7 +32,7 @@ public class Main
                 System.out.println("Invalid input. Please enter a number between 1 and 10.");
             }
         } catch (Exception e) {
-            System.out.println("Invalid input. Please enter a valid number.");
+            System.out.println("Invalid input. Please enter a number 1-10.");
         }
     }
 }
