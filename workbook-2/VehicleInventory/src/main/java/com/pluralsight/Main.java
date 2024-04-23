@@ -6,9 +6,12 @@ public class Main
 {
     static final Scanner userInput = new Scanner(System.in);
 
-    public static void main(String[] args)
+    public void main(String[] args)
     {
         // create an array of vehicles here
+        Vehicle[] vehicles = new Vehicle[20];
+        int vehicleCount = 0;
+
 
 
         int choice = 0;

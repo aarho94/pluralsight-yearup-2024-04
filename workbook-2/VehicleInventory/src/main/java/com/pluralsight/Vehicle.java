@@ -17,53 +17,44 @@ public class Vehicle
         this.price = price;
     }
 
-    public long getVehicleId()
-    {
+    public long getVehicleId() {
         return vehicleId;
     }
 
-    public void setVehicleId(long vehicleId)
-    {
+    public void setVehicleId(long vehicleId) {
         this.vehicleId = vehicleId;
     }
 
-    public String getMakeModel()
-    {
+    public String getMakeModel() {
         return makeModel;
     }
 
-    public void setMakeModel(String makeModel)
-    {
+    public void setMakeModel(String makeModel) {
         this.makeModel = makeModel;
     }
 
-    public String getColor()
-    {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(String color)
-    {
+    public void setColor(String color) {
         this.color = color;
     }
 
-    public String getOdometerReading()
-    {
+    public String getOdometerReading() {
         return odometerReading;
     }
 
-    public void setOdometerReading(String odometerReading)
-    {
+    public void setOdometerReading(String odometerReading) {
         this.odometerReading = odometerReading;
     }
 
-    public double getPrice()
-    {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(double price)
-    {
+    public void setPrice(double price) {
         this.price = price;
     }
+
 }
