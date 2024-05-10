@@ -1,9 +1,10 @@
 package com.pluralsight;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-
+        Scanner scanner = new Scanner(System.in);
         Room room1 = new Room(2, 100.0, false, true);
 
         System.out.println("Room Information:");
@@ -22,17 +23,22 @@ public class Main {
         System.out.println("Is Weekend: " + reservation1.isWeekend());
         System.out.println("Total Reservation Cost: $" + reservation1.getReservationTotal());
 
-        Employee employee1 = new Employee(1, "John Doe", "Concierge", 25.0, 45.0);
+        Employee employee1 = new Employee(1, "John Doe", "Engineering", 25.0);
 
         System.out.println("\nEmployee Information:");
         System.out.println("Employee ID: " + employee1.getEmployeeId());
         System.out.println("Name: " + employee1.getName());
         System.out.println("Department: " + employee1.getDepartment());
         System.out.println("Pay Rate: $" + employee1.getPayRate() + " per hour");
+        System.out.print("Enter punch-in time (e.g., 10.0 for 10:00 am): ");
+        double punchInTime = scanner.nextDouble();
+        employee1.punchIn(punchInTime);
+        System.out.print("Enter punch-out time (e.g., 12.5 for 12:30 pm): ");
+        double punchOutTime = scanner.nextDouble();
+        employee1.punchOut(punchOutTime);
+        System.out.println("Total Hours Worked: " + employee1.getHoursWorked() + " hours");
         System.out.println("Hours Worked: " + employee1.getHoursWorked() + " hours");
         System.out.println("Total Pay: $" + employee1.getTotalPay());
-        System.out.println("Regular Hours: " + employee1.getRegularHours() + " hours");
-        System.out.println("Overtime Hours: " + employee1.getOvertimeHours() + " hours");
     }
 }
 

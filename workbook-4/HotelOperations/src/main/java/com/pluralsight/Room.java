@@ -6,7 +6,6 @@ public class Room {
     private boolean isOccupied;
     private boolean isDirty;
 
-    // Constructor
     public Room(int numberOfBeds, double price, boolean isOccupied, boolean isDirty) {
         this.numberOfBeds = numberOfBeds;
         this.price = price;
@@ -14,7 +13,7 @@ public class Room {
         this.isDirty = isDirty;
     }
 
-    // Getter methods
+
     public int getNumberOfBeds() {
         return numberOfBeds;
     }
@@ -32,11 +31,33 @@ public class Room {
     }
 
     public boolean isAvailable() {
-        return !isOccupied && !isDirty;
+        return !isOccupied() && !isDirty();
     }
 
-    // Setter method
-    public void setOccupied(boolean occupied) {
-        this.isOccupied = occupied;
+    public void checkIn() {
+        if (!isOccupied()) {
+            isOccupied = true;
+            isDirty = true;
+            System.out.println("Room checked in successfully.");
+        } else {
+            System.out.println("Room is already occupied.");
+        }
+    }
+
+    public void checkOut() {
+        if (isOccupied()) {
+            System.out.println("Room checked out successfully.");
+        } else {
+            System.out.println("Room is not occupied.");
+        }
+    }
+
+    public void cleanRoom() {
+        if (isOccupied() && isDirty()) {
+            isDirty = false;
+            System.out.println("Room cleaned successfully.");
+        } else {
+            System.out.println("Room is either not occupied or not dirty.");
+        }
     }
 }
