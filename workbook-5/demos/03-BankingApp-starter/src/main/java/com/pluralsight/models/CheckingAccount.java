@@ -1,31 +1,16 @@
-package com.pluralsight.models;
+package com.pluralsight;
 
-public class CheckingAccount extends BankAccount
-{
-    private static final double MAX_OVERDRAFT = 500;
+import com.pluralsight.models.BankAccount;
 
-    public CheckingAccount(int accountNumber, String owner, double balance)
-    {
+public class CheckingAccount extends BankAccount {
+    private static final double MAX_OVERDRAFT = 500.0;
+
+    public CheckingAccount(int accountNumber, String owner, double balance) {
         super(accountNumber, owner, balance);
     }
 
     @Override
-    public boolean canWithdraw(double amount)
-    {
-        double newBalance = getBalance() - amount;
-        return newBalance >= -MAX_OVERDRAFT;
+    public boolean canWithdraw(double amount) {
+        return balance + MAX_OVERDRAFT >= amount;
     }
-
-    @Override
-    public double withdraw(double amount)
-    {
-        if(canWithdraw(amount))
-        {
-            // call the withdraw() method of the parent
-            return super.withdraw(amount);
-        }
-
-        return getBalance();
-    }
-
 }
