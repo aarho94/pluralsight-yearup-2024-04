@@ -9,7 +9,8 @@ public class Employee extends Person
         super(firstName, lastName, age);
         this.salary = salary;
     }
-    public Employee()
+
+    public Employee(String firstName, String lastName, int i)
     {
     }
 
