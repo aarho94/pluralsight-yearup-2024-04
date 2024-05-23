@@ -1,6 +1,4 @@
-package com.pluralsight;
-
-import com.pluralsight.models.BankAccount;
+package com.pluralsight.models;
 
 public class CheckingAccount extends BankAccount {
     private static final double MAX_OVERDRAFT = 500.0;

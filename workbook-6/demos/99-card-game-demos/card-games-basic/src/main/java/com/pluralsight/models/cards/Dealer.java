@@ -1,6 +1,6 @@
 package com.pluralsight.models.cards;
 
-public class Dealer
+public class  Dealer
 {
     private Deck deck;
 

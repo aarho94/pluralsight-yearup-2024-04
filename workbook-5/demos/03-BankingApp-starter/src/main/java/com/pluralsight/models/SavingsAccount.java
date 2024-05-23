@@ -1,6 +1,4 @@
-package com.pluralsight;
-
-import com.pluralsight.models.BankAccount;
+package com.pluralsight.models;
 
 public class SavingsAccount extends BankAccount {
     private static final double MIN_BALANCE = 25.0;

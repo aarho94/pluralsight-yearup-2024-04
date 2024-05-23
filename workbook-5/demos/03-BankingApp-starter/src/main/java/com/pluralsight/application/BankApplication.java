@@ -1,2 +1,5 @@
-package com.pluralsight.application;public class BankApplication {
+package com.pluralsight.application;
+
+public class BankApplication
+{
 }
