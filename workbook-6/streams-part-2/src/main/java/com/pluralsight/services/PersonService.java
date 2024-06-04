@@ -69,7 +69,7 @@ public class PersonService {
         // the salary of each employee is based on their age $3,000 per year
         // i.e. a 10 year old = $30,000, a 40 year old = $120,000 etc
         return people.stream()
-                .map(person -> new Employee(person.getFirstName(), person.getLastName(), person.getAge() * 3000))
+                .map(person -> new Employee(person.getFirstName(), person.getLastName(), person.getAge(), person.getAge() * 3000))
                 .collect(Collectors.toList());
     }
 }
