@@ -12,23 +12,38 @@ public class Main {
         String username = "root";
         String password = "ArFuckallb0y$";
 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // Note the updated driver class name
-            Connection connection = DriverManager.getConnection(url, username, password);
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM products");
+        try (Connection conn = DriverManager.getConnection(url, username, password);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT ProductID, ProductName, UnitPrice, UnitsInStock FROM Products")) {
 
-            while (resultSet.next()) {
-                String productName = resultSet.getString("ProductName");
-                System.out.println("Product Name: " + productName);
+            System.out.println("Option 1: Stacked Information");
+            while (rs.next()) {
+                int productId = rs.getInt("ProductID");
+                String productName = rs.getString("ProductName");
+                double unitPrice = rs.getDouble("UnitPrice");
+                int unitsInStock = rs.getInt("UnitsInStock");
+
+                System.out.println("Product Id: " + productId);
+                System.out.println("Name: " + productName);
+                System.out.println("Price: " + unitPrice);
+                System.out.println("Stock: " + unitsInStock);
+                System.out.println("--------------------");
             }
 
-            connection.close();
-        } catch (ClassNotFoundException e) {
-            System.out.println("MySQL JDBC driver not found!");
-            e.printStackTrace();
+            System.out.println("\nOption 2: Rows of Information");
+            System.out.println("Id\tName\tPrice\tStock");
+            rs.beforeFirst(); // reset the result set
+            while (rs.next()) {
+                int productId = rs.getInt("ProductID");
+                String productName = rs.getString("ProductName");
+                double unitPrice = rs.getDouble("UnitPrice");
+                int unitsInStock = rs.getInt("UnitsInStock");
+
+                System.out.println(productId + "\t" + productName + "\t" + unitPrice + "\t" + unitsInStock);
+            }
+
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }
